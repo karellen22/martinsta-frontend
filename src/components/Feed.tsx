@@ -1,8 +1,9 @@
 import React from 'react';
-import { PictureCard } from './PictureCard';
+import { PictureCardList } from '../components/PictureCardList';
+import { getPictureCards } from '../data/PictureCardData';
 
 export const Feed = () => (
   <div>
-    <PictureCard />
+    <PictureCardList data={getPictureCards()} />
   </div>
 );
