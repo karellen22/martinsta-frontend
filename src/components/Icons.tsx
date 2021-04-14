@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const FeedIcon = () => (
-  <Link to="martinsta-frontend/feed">
+  <Link to="martinsta-frontend/">
     <img
       src={camera}
       alt="Feed"

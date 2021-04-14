@@ -22,7 +22,7 @@ function App() {
       >
         <Header />
         <Routes>
-          <Route path="martinsta-frontend/feed" element={<Feed />} />
+          <Route path="martinsta-frontend/" element={<Feed />} />
           <Route path="martinsta-frontend/search" element={<SearchPage />} />
           <Route path="martinsta-frontend/picture/:pictureId" element={<PicturePage />} />
           <Route path="martinsta-frontend/profile/:pictureAuthor" element={<ProfilePage />} />
