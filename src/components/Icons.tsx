@@ -3,9 +3,10 @@ import { css } from '@emotion/react';
 import React from 'react';
 import camera from '../assets/camera.svg';
 import profile from '../assets/profile.svg';
+import { Link } from 'react-router-dom';
 
 export const FeedIcon = () => (
-  <a href="./">
+  <Link to="./">
     <img
       src={camera}
       alt="Feed"
@@ -14,11 +15,11 @@ export const FeedIcon = () => (
         opacity: 0.6;
       `}
     />
-  </a>
+  </Link>
 );
 
 export const ProfileIcon = () => (
-  <a href="./profile">
+  <Link to="./profile">
     <img
       src={profile}
       alt="Profile"
@@ -27,5 +28,5 @@ export const ProfileIcon = () => (
         opacity: 0.6;
       `}
     />
-  </a>
+  </Link>
 );
