@@ -6,7 +6,7 @@ import profile from '../assets/profile.svg';
 import { Link } from 'react-router-dom';
 
 export const FeedIcon = () => (
-  <Link to="./martinsta-frontend">
+  <Link to="martinsta-frontend">
     <img
       src={camera}
       alt="Feed"
@@ -19,7 +19,7 @@ export const FeedIcon = () => (
 );
 
 export const ProfileIcon = () => (
-  <Link to="./profile">
+  <Link to="profile">
     <img
       src={profile}
       alt="Profile"
