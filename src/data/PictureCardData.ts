@@ -1,5 +1,6 @@
 import chilling1 from '../assets/chilling1.jpg';
 import sunbathing1 from '../assets/sunbathing1.jpg';
+import work1 from '../assets/work1.jpg';
 
 export interface PictureCardData {
   pictureId: number;
@@ -43,6 +44,21 @@ const pictureCards: PictureCardData[] = [
   },
   {
     pictureId: 2,
+    pictureLocation: work1,
+    pictureDescription: 'Having fun at work #workinghard #nofilter #bestlife',
+    pictureAuthor: 'Martin',
+    created: new Date(),
+    comments: [
+      {
+        commentId: 1,
+        content: 'When will you feed me?',
+        commentAuthor: 'Mia',
+        created: new Date(),
+      },
+    ],
+  },
+  {
+    pictureId: 3,
     pictureLocation: sunbathing1,
     pictureDescription: 'Bathing in the sun #chill #nofilter #panellife',
     pictureAuthor: 'Mia',
