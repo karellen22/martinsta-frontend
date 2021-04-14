@@ -86,3 +86,13 @@ export const getSpecificPictureCard = (pictureId: number) => {
 export const getUserPictures = (pictureAuthor: string) => {
   return pictureCards.filter((card) => card.pictureAuthor === pictureAuthor);
 };
+
+export const searchPictures = (searchCritera: string) => {
+  console.log(`Criteria: ${searchCritera}`);
+  const toReturn = pictureCards.filter(
+    (card) => card.pictureDescription.toLowerCase().includes(searchCritera.toLowerCase()),
+    // || card.pictureAuthor.toLowerCase().indexOf(searchCritera.toLowerCase()),
+  );
+  console.log(toReturn);
+  return toReturn;
+};
