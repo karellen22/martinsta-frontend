@@ -22,11 +22,11 @@ function App() {
       >
         <Header />
         <Routes>
-          <Route path="martinsta-frontend" element={<Feed />} />
-          <Route path="search" element={<SearchPage />} />
-          <Route path="picture" element={<PicturePage />} />
-          <Route path="profile" element={<ProfilePage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="martinsta-frontend/feed" element={<Feed />} />
+          <Route path="martinsta-frontend/search" element={<SearchPage />} />
+          <Route path="martinsta-frontend/picture" element={<PicturePage />} />
+          <Route path="martinsta-frontend/profile" element={<ProfilePage />} />
+          <Route path="martinsta-frontend/*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </BrowserRouter>
