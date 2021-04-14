@@ -1,6 +1,7 @@
 import chilling1 from '../assets/chilling1.jpg';
 import sunbathing1 from '../assets/sunbathing1.jpg';
 import work1 from '../assets/work1.jpg';
+import { PictureCard } from '../components/PictureCard';
 
 export interface PictureCardData {
   pictureId: number;
@@ -76,4 +77,12 @@ const pictureCards: PictureCardData[] = [
 
 export const getPictureCards = (): PictureCardData[] => {
   return pictureCards;
+};
+
+export const getSpecificPictureCard = (pictureId: number) => {
+  return pictureCards.filter((card) => card.pictureId === pictureId);
+};
+
+export const getUserPictures = (pictureAuthor: string) => {
+  return pictureCards.filter((card) => card.pictureAuthor === pictureAuthor);
 };

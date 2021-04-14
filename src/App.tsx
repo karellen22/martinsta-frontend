@@ -24,8 +24,8 @@ function App() {
         <Routes>
           <Route path="martinsta-frontend/feed" element={<Feed />} />
           <Route path="martinsta-frontend/search" element={<SearchPage />} />
-          <Route path="martinsta-frontend/picture" element={<PicturePage />} />
-          <Route path="martinsta-frontend/profile" element={<ProfilePage />} />
+          <Route path="martinsta-frontend/picture/:pictureId" element={<PicturePage />} />
+          <Route path="martinsta-frontend/profile/:pictureAuthor" element={<ProfilePage />} />
           <Route path="martinsta-frontend/*" element={<NotFoundPage />} />
         </Routes>
       </div>
