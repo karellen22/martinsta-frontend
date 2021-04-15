@@ -84,7 +84,8 @@ export const getSpecificPictureCard = (pictureId: number) => {
   return pictureCards.filter((card) => card.pictureId === pictureId);
 };
 
-export const getUserPictures = (pictureAuthor: string) => {
+export const getUserPictures = async (pictureAuthor: string): Promise<PictureCardData[]> => {
+  await wait(500);
   return pictureCards.filter((card) => card.pictureAuthor === pictureAuthor);
 };
 

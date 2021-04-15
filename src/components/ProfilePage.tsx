@@ -4,16 +4,38 @@ import React from 'react';
 import { PictureCardList } from './PictureCardList';
 import { useParams } from 'react-router-dom';
 import { Page } from './Page';
-import { getUserPictures } from '../data/PictureCardData';
+import { getUserPictures, PictureCardData } from '../data/PictureCardData';
 
 export const ProfilePage = () => {
   const { pictureAuthor } = useParams();
-  const currentPicture = getUserPictures(pictureAuthor);
+  // const currentPicture = getUserPictures(pictureAuthor);
+
+  const [pictures, setPictures] = React.useState<PictureCardData[]>([]);
+  const [picturesLoading, setPicturesLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const doGetPictureCards = async () => {
+      const pictures = await getUserPictures(pictureAuthor);
+      setPictures(pictures);
+      setPicturesLoading(false);
+    };
+    doGetPictureCards();
+  }, [pictureAuthor]);
 
   return (
     <Page title="Profile Page">
       <React.Fragment>
-        <PictureCardList data={currentPicture}></PictureCardList>
+        {picturesLoading ? (
+          <div
+            css={css`
+              text-align: center;
+            `}
+          >
+            Loading user profile...
+          </div>
+        ) : (
+          <PictureCardList data={pictures}></PictureCardList>
+        )}
       </React.Fragment>
     </Page>
   );

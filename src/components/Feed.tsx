@@ -29,7 +29,19 @@ export const Feed = () => {
 
   return (
     <Page>
-      <div>{picturesLoading ? <div>Loading...</div> : <PictureCardList data={pictures} />}</div>
+      <div>
+        {picturesLoading ? (
+          <div
+            css={css`
+              text-align: center;
+            `}
+          >
+            Loading your feed...
+          </div>
+        ) : (
+          <PictureCardList data={pictures} />
+        )}
+      </div>
     </Page>
   );
 };
