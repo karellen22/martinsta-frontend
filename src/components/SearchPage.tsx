@@ -10,8 +10,9 @@ export const SearchPage = () => {
   const search = searchParams.get('criteria') || '';
   const matches = searchPictures(search);
 
+  const pageTitle = 'Search Results for: ' + search;
   return (
-    <Page title="Search Results">
+    <Page title={pageTitle}>
       <PictureCardList data={matches}></PictureCardList>
     </Page>
   );
