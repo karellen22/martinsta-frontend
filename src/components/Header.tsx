@@ -54,6 +54,8 @@ export const Header = () => {
             background-color: white;
             width: 200px;
             height: 30px;
+            margin-left: 15px;
+            margin-right: 15px;
             :focus {
               outline-color: ${gray5};
             }
