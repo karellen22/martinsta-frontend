@@ -20,16 +20,24 @@ export const PictureCard = ({ data }: Props) => {
         padding: 10px 0px;
       `}
     >
-      <div
+      <Link
+        to={`/martinsta-frontend/profile/${data.pictureAuthor}`}
         css={css`
-          padding: 10px 20px;
-          font-size: 20px;
-          text-align: left;
-          font-weight: bold;
+          text-decoration: none;
+          color: ${gray2};
         `}
       >
-        {data.pictureAuthor}
-      </div>
+        <div
+          css={css`
+            padding: 10px 20px;
+            font-size: 20px;
+            text-align: left;
+            font-weight: bold;
+          `}
+        >
+          {data.pictureAuthor}
+        </div>
+      </Link>
       <Link
         css={css`
           text-decoration: none;
@@ -87,16 +95,24 @@ export const PictureCard = ({ data }: Props) => {
                   display: flex;
                 `}
               >
-                <div
+                <Link
+                  to={`/martinsta-frontend/profile/${comment.commentAuthor}`}
                   css={css`
-                    text-align: left;
-                    font-weight: bold;
-                    display: flex;
-                    margin-right: 10px;
+                    text-decoration: none;
+                    color: ${gray2};
                   `}
                 >
-                  {comment.commentAuthor}
-                </div>
+                  <div
+                    css={css`
+                      text-align: left;
+                      font-weight: bold;
+                      display: flex;
+                      margin-right: 10px;
+                    `}
+                  >
+                    {comment.commentAuthor}
+                  </div>
+                </Link>
                 <div
                   css={css`
                     text-align: left;
