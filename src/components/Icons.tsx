@@ -5,6 +5,7 @@ import camera from '../assets/camera.svg';
 import profile from '../assets/profile.svg';
 import { Link } from 'react-router-dom';
 import { gray2, gray3 } from '../Styles';
+import home from '../assets/home.svg';
 
 interface Props {
   currentUser?: string;
@@ -13,11 +14,28 @@ interface Props {
 export const FeedIcon = () => (
   <Link to="martinsta-frontend/">
     <img
-      src={camera}
+      src={home}
       alt="Feed"
       css={css`
-        width: 12px;
+        width: 28px;
         opacity: 0.6;
+        margin-left: 15px;
+        margin-right: 15px;
+      `}
+    />
+  </Link>
+);
+
+export const UploadIcon = () => (
+  <Link to="martinsta-frontend/">
+    <img
+      src={camera}
+      alt="Upload"
+      css={css`
+        width: 30px;
+        opacity: 0.6;
+        margin-left: 15px;
+        margin-right: 15px;
       `}
     />
   </Link>
@@ -32,8 +50,10 @@ export const ProfileIcon = ({ currentUser }: Props) => {
           src={profile}
           alt="Profile"
           css={css`
-            width: 12px;
+            width: 30px;
             opacity: 0.6;
+            margin-left: 15px;
+            margin-right: 15px;
           `}
         />
       </div>
