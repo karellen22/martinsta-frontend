@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import { fontFamily, fontSize, gray2, gray5 } from '../Styles';
 import React, { ChangeEvent } from 'react';
-import { FeedIcon, ProfileIcon, UploadIcon } from './Icons';
+import { FeedIcon, ProfileIcon, UploadIcon, LogoIcon } from './Icons';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
 export const Header = () => {
@@ -35,8 +35,7 @@ export const Header = () => {
         box-shadow: 0 3px 7px 0 rgba(110, 112, 114, 0.21);
       `}
     >
-      <FeedIcon />
-      <UploadIcon />
+      <LogoIcon />
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -62,6 +61,8 @@ export const Header = () => {
           `}
         />
       </form>
+      <FeedIcon />
+      <UploadIcon />
       <ProfileIcon />
     </div>
   );

@@ -5,10 +5,26 @@ import camera from '../assets/camera.svg';
 import profile from '../assets/profile.svg';
 import { Link } from 'react-router-dom';
 import home from '../assets/home.svg';
+import logo from '../assets/logo.png';
 
 interface Props {
   currentUser?: string;
 }
+
+export const LogoIcon = () => (
+  <Link to="/martinsta-frontend/">
+    <img
+      src={logo}
+      alt="Logo"
+      css={css`
+        width: 75px;
+        opacity: 0.6;
+        margin-left: 15px;
+        margin-right: 15px;
+      `}
+    ></img>
+  </Link>
+);
 
 export const FeedIcon = () => (
   <Link to="martinsta-frontend/">
