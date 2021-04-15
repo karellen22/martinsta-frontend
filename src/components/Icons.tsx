@@ -4,7 +4,6 @@ import React from 'react';
 import camera from '../assets/camera.svg';
 import profile from '../assets/profile.svg';
 import { Link } from 'react-router-dom';
-import { gray2, gray3 } from '../Styles';
 import home from '../assets/home.svg';
 
 interface Props {

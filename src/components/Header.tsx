@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { fontFamily, fontSize, gray1, gray2, gray5 } from '../Styles';
+import { fontFamily, fontSize, gray2, gray5 } from '../Styles';
 import React, { ChangeEvent } from 'react';
 import { FeedIcon, ProfileIcon, UploadIcon } from './Icons';
 import { useSearchParams, useNavigate } from 'react-router-dom';
