@@ -75,7 +75,8 @@ const pictureCards: PictureCardData[] = [
   },
 ];
 
-export const getPictureCards = (): PictureCardData[] => {
+export const getPictureCards = async (): Promise<PictureCardData[]> => {
+  await wait(500);
   return pictureCards;
 };
 
@@ -89,10 +90,12 @@ export const getUserPictures = (pictureAuthor: string) => {
 
 export const searchPictures = (searchCritera: string) => {
   console.log(`Criteria: ${searchCritera}`);
-  const toReturn = pictureCards.filter(
-    (card) => card.pictureDescription.toLowerCase().includes(searchCritera.toLowerCase()),
-    // || card.pictureAuthor.toLowerCase().indexOf(searchCritera.toLowerCase()),
-  );
+  const toReturn = pictureCards.filter((card) => card.pictureDescription.toLowerCase().includes(searchCritera.toLowerCase()));
   console.log(toReturn);
   return toReturn;
+};
+
+// To simulate asynchronous API calls, we have to introduce some delay.
+const wait = (ms: number): Promise<void> => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };
