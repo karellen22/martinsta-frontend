@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { gray2, gray3 } from '../Styles';
-import React from 'react';
-import { PictureCardData } from '../data/PictureCardData';
+import React, { ChangeEvent } from 'react';
+import { PictureCardData, addCommentToPicture } from '../data/PictureCardData';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -10,10 +10,20 @@ interface Props {
 }
 
 export const PictureCard = ({ data }: Props) => {
-  // const navigate = useNavigate();
-  // const handlePictureOnClick = () => {
-  //   navigate('picture');
-  // };
+  const [comment, setComment] = React.useState('');
+  const [comments, setComments] = React.useState(data.comments);
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setComment(e.currentTarget.value);
+    // console.log('comment changed to: ' + comment);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // console.log('comment submitted' + comment + ' picture: ' + data.pictureId);
+    addCommentToPicture(comment, data.pictureId);
+    setComments(data.comments);
+    setComment('');
+  };
+
   return (
     <div
       css={css`
@@ -74,7 +84,7 @@ export const PictureCard = ({ data }: Props) => {
       </div>
       <div>
         <div>Comments</div>
-        {data.comments.map((comment, index) => {
+        {comments.map((comment, index) => {
           return (
             <li
               key={index}
@@ -137,6 +147,20 @@ export const PictureCard = ({ data }: Props) => {
             </li>
           );
         })}
+      </div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Add a comment..."
+            onChange={handleSearchChange}
+            value={comment}
+            css={css`
+              width: 92%;
+              border: none;
+            `}
+          ></input>
+        </form>
       </div>
     </div>
   );

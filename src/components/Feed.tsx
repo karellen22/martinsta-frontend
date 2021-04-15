@@ -4,7 +4,6 @@ import React from 'react';
 import { PictureCardList } from '../components/PictureCardList';
 import { getPictureCards, PictureCardData } from '../data/PictureCardData';
 import { Page } from './Page';
-import { PageTitle } from './PageTitle';
 
 export const Feed = () => {
   // We store the pictures in this tate that we will show on the feed.

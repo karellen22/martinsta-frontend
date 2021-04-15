@@ -41,7 +41,7 @@ export const UploadIcon = () => (
 );
 
 export const ProfileIcon = ({ currentUser }: Props) => {
-  currentUser = 'Mia';
+  currentUser = 'Martin';
   return (
     <Link to={`/martinsta-frontend/profile/${currentUser}`}>
       <div>

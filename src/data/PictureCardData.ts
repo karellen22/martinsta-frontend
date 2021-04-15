@@ -1,7 +1,6 @@
 import chilling1 from '../assets/chilling1.jpg';
 import sunbathing1 from '../assets/sunbathing1.jpg';
 import work1 from '../assets/work1.jpg';
-import { PictureCard } from '../components/PictureCard';
 
 export interface PictureCardData {
   pictureId: number;
@@ -94,6 +93,19 @@ export const searchPictures = (searchCritera: string) => {
   const toReturn = pictureCards.filter((card) => card.pictureDescription.toLowerCase().includes(searchCritera.toLowerCase()));
   console.log(toReturn);
   return toReturn;
+};
+
+export const addCommentToPicture = (comment: string, pictureId: number) => {
+  let pictureToCommentOn = getSpecificPictureCard(pictureId)[0];
+  let numberOfCommentsOnPicture = pictureToCommentOn.comments.length;
+
+  pictureToCommentOn.comments.push({
+    commentId: ++numberOfCommentsOnPicture,
+    content: comment,
+    commentAuthor: 'Martin',
+    created: new Date(),
+  });
+  return true;
 };
 
 // To simulate asynchronous API calls, we have to introduce some delay.

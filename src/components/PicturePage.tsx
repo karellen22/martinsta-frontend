@@ -1,10 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import React from 'react';
 import { Page } from './Page';
 import { useParams } from 'react-router-dom';
-import { PictureCardData, getSpecificPictureCard } from '../data/PictureCardData';
-import { PictureCard } from './PictureCard';
+import { getSpecificPictureCard } from '../data/PictureCardData';
 import { PictureCardList } from './PictureCardList';
 
 export const PicturePage = () => {

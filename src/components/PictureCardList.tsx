@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import React from 'react';
 import { PictureCardData } from '../data/PictureCardData';
 import { PictureCard } from './PictureCard';
-import { accent2, gray5 } from '../Styles';
+import { accent2 } from '../Styles';
 
 interface Props {
   data: PictureCardData[];
@@ -12,7 +12,7 @@ interface Props {
 export const PictureCardList = ({ data }: Props) => (
   <ul>
     {data.map((picture) => (
-      <li
+      <div
         key={picture.pictureId}
         css={css`
           text-align: center;
@@ -27,7 +27,7 @@ export const PictureCardList = ({ data }: Props) => (
         `}
       >
         <PictureCard data={picture} />
-      </li>
+      </div>
     ))}
   </ul>
 );
