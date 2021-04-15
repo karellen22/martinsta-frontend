@@ -27,7 +27,7 @@ export const FeedIcon = () => (
 );
 
 export const UploadIcon = () => (
-  <Link to="martinsta-frontend/">
+  <Link to="/martinsta-frontend/upload">
     <img
       src={camera}
       alt="Upload"

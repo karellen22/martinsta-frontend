@@ -9,6 +9,7 @@ import { PicturePage } from './components/PicturePage';
 import { SearchPage } from './components/SearchPage';
 import { ProfilePage } from './components/ProfilePage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { UploadPage } from './components/UploadPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="martinsta-frontend/search" element={<SearchPage />} />
           <Route path="martinsta-frontend/picture/:pictureId" element={<PicturePage />} />
           <Route path="martinsta-frontend/profile/:pictureAuthor" element={<ProfilePage />} />
+          <Route path="martinsta-frontend/upload" element={<UploadPage />} />
           <Route path="martinsta-frontend/*" element={<NotFoundPage />} />
         </Routes>
       </div>
