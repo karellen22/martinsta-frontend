@@ -96,19 +96,19 @@ export const searchPictures = (searchCritera: string) => {
   return toReturn;
 };
 
-export const uploadPicture = (pictureInBase64: string) => {
+export const uploadPicture = (pictureInBase64: string, description: string) => {
   console.log('uploadPicture called: ' + pictureInBase64);
   let numberOfPictures = pictureCards.length;
   pictureCards.push({
     pictureId: ++numberOfPictures,
     pictureLocation: '',
-    pictureDescription: 'description',
+    pictureDescription: description,
     pictureBase64: pictureInBase64,
     pictureAuthor: 'Martin',
     created: new Date(),
     comments: [],
   });
-  return true;
+  return numberOfPictures;
 };
 
 export const addCommentToPicture = (comment: string, pictureId: number) => {

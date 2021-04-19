@@ -1,17 +1,23 @@
 /** @jsxImportSource @emotion/react */
-// import { css } from '@emotion/react';
-import React from 'react';
+import { css } from '@emotion/react';
+import React, { ChangeEvent } from 'react';
 import Dropzone, { IDropzoneProps, ILayoutProps } from 'react-dropzone-uploader';
 import { Page } from './Page';
 import 'react-dropzone-uploader/dist/styles.css';
 import { uploadPicture } from '../data/PictureCardData';
-
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // add type defs to custom LayoutComponent prop to easily inspect props passed to injected components
 
 export const UploadPage = () => {
   // State used to store the base64 converted image
-  const [imageBase64, setImageBase64] = React.useState('');
-
+  // const [imageBase64, setImageBase64] = React.useState('');
+  const navigate = useNavigate();
+  const [description, setDescription] = React.useState('');
+  const handleDescriptionChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.currentTarget.value);
+    // console.log('description changed to: ' + description);
+  };
   const handleSubmit: IDropzoneProps['onSubmit'] = (files, allFiles) => {
     let reader = new FileReader();
 
@@ -21,10 +27,8 @@ export const UploadPage = () => {
 
     reader.onloadend = (readerEvt: any) => {
       console.log('onloadend');
-      let binaryString = readerEvt.target.result;
-      setImageBase64(binaryString);
-      uploadPicture(readerEvt.target.result);
-      setImageBase64('');
+      let pictureNumber = uploadPicture(readerEvt.target.result, description);
+      navigate(`/martinsta-frontend/picture/${pictureNumber}`);
     };
 
     reader.readAsDataURL(files[0].file);
@@ -44,6 +48,20 @@ export const UploadPage = () => {
   };
   return (
     <Page title="Upload Picture">
+      <div>
+        <form>
+          <input
+            type="text"
+            placeholder="Say something about the picture"
+            onChange={handleDescriptionChange}
+            // value={comment}
+            css={css`
+              width: 100%;
+              /* border: none; */
+            `}
+          ></input>
+        </form>
+      </div>
       <Dropzone
         // getUploadParams={getUploadParams}
         LayoutComponent={Layout}
