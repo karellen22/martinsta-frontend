@@ -7,6 +7,7 @@ export interface PictureCardData {
   // For now, the picture will be stored as a file.
   // Later, this can be changed to be stored as a byte array for example.
   pictureLocation: string;
+  pictureBase64?: string;
   pictureDescription: string;
   pictureAuthor: string;
   created: Date;
@@ -93,6 +94,21 @@ export const searchPictures = (searchCritera: string) => {
   const toReturn = pictureCards.filter((card) => card.pictureDescription.toLowerCase().includes(searchCritera.toLowerCase()));
   console.log(toReturn);
   return toReturn;
+};
+
+export const uploadPicture = (pictureInBase64: string) => {
+  console.log('uploadPicture called: ' + pictureInBase64);
+  let numberOfPictures = pictureCards.length;
+  pictureCards.push({
+    pictureId: ++numberOfPictures,
+    pictureLocation: '',
+    pictureDescription: 'description',
+    pictureBase64: pictureInBase64,
+    pictureAuthor: 'Martin',
+    created: new Date(),
+    comments: [],
+  });
+  return true;
 };
 
 export const addCommentToPicture = (comment: string, pictureId: number) => {

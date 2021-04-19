@@ -22,6 +22,7 @@ export const Feed = () => {
       setPictures(pictures);
       // Than we set the loading to false, since we have fetched the required data.
       setPicturesLoading(false);
+      console.log('number of pictures: ' + pictures.length);
     };
     doGetPictureCards();
   }, []);

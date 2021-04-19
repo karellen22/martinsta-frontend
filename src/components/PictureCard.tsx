@@ -56,14 +56,25 @@ export const PictureCard = ({ data }: Props) => {
         to={`/martinsta-frontend/picture/${data.pictureId}`}
       >
         <div>
-          <img
-            src={data.pictureLocation}
-            alt="alt"
-            // onClick={handlePictureOnClick}
-            css={css`
-              width: 100%;
-            `}
-          ></img>
+          {data.pictureLocation === '' ? (
+            // <p>{`${data.pictureBase64}`}</p>
+            <img
+              src={`${data.pictureBase64}`}
+              alt="alt"
+              css={css`
+                width: 100%;
+              `}
+            />
+          ) : (
+            <img
+              src={data.pictureLocation}
+              alt="alt"
+              // onClick={handlePictureOnClick}
+              css={css`
+                width: 100%;
+              `}
+            ></img>
+          )}
         </div>
       </Link>
       <div
