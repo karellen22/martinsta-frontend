@@ -28,7 +28,7 @@ export const UploadPage = () => {
     reader.onloadend = (readerEvt: any) => {
       console.log('onloadend');
       let pictureNumber = uploadPicture(readerEvt.target.result, description);
-      navigate(`/martinsta-frontend/picture/${pictureNumber}`);
+      navigate(`/picture/${pictureNumber}`);
     };
 
     reader.readAsDataURL(files[0].file);

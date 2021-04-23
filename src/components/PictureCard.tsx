@@ -31,7 +31,7 @@ export const PictureCard = ({ data }: Props) => {
       `}
     >
       <Link
-        to={`/martinsta-frontend/profile/${data.pictureAuthor}`}
+        to={`/profile/${data.pictureAuthor}`}
         css={css`
           text-decoration: none;
           color: ${gray2};
@@ -53,7 +53,7 @@ export const PictureCard = ({ data }: Props) => {
           text-decoration: none;
           color: ${gray2};
         `}
-        to={`/martinsta-frontend/picture/${data.pictureId}`}
+        to={`/picture/${data.pictureId}`}
       >
         <div>
           {data.pictureLocation === '' ? (
@@ -117,7 +117,7 @@ export const PictureCard = ({ data }: Props) => {
                 `}
               >
                 <Link
-                  to={`/martinsta-frontend/profile/${comment.commentAuthor}`}
+                  to={`/profile/${comment.commentAuthor}`}
                   css={css`
                     text-decoration: none;
                     color: ${gray2};

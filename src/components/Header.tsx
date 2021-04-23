@@ -15,9 +15,9 @@ export const Header = () => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('navigating to :/martinsta-frontend/search?criteria=' + search);
+    console.log('navigating to :/search?criteria=' + search);
     const modifiedSearchCriteria = search.replace('#', '');
-    navigate('/martinsta-frontend/search?criteria=' + modifiedSearchCriteria);
+    navigate('/search?criteria=' + modifiedSearchCriteria);
   };
   return (
     <div

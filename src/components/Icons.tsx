@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const LogoIcon = () => (
-  <Link to="/martinsta-frontend/">
+  <Link to="/">
     <img
       src={logo}
       alt="Logo"
@@ -27,7 +27,7 @@ export const LogoIcon = () => (
 );
 
 export const FeedIcon = () => (
-  <Link to="martinsta-frontend/">
+  <Link to="/">
     <img
       src={home}
       alt="Feed"
@@ -42,7 +42,7 @@ export const FeedIcon = () => (
 );
 
 export const UploadIcon = () => (
-  <Link to="/martinsta-frontend/upload">
+  <Link to="/upload">
     <img
       src={camera}
       alt="Upload"
@@ -59,7 +59,7 @@ export const UploadIcon = () => (
 export const ProfileIcon = ({ currentUser }: Props) => {
   currentUser = 'Martin';
   return (
-    <Link to={`/martinsta-frontend/profile/${currentUser}`}>
+    <Link to={`/profile/${currentUser}`}>
       <div>
         <img
           src={profile}
